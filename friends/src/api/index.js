@@ -1,8 +1,10 @@
 import axios from "axios"
+
+
 import { axiosWithAuth } from '../utils'
 
 
-const BASE_URL = 'http://localhost:5000'
+export const BASE_URL = 'http://localhost:5000'
 
 export const getFriends = () => { 
     axiosWithAuth()
@@ -26,13 +28,3 @@ export const postNewFriend = (friend) => {
     })
 }
 
-export const login = (user) => { 
-    
-    axios.post(`${BASE_URL}/api/login`, user)
-    .then((response) => { 
-        console.log("MY LOGIN RESPONSE", response.data)
-    })
-    .catch((error) => { 
-        console.log("There was an error loggin you in :{", error)
-    })
-}
