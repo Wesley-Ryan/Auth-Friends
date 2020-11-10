@@ -9,11 +9,11 @@ import {BASE_URL} from '../api'
 const LoginForm = () => {
     const history = useHistory()
     const { register, handleSubmit, errors,reset } = useForm();
-
      const login = (history,user) => { 
         axios.post(`${BASE_URL}/api/login`, user)
         .then((response) => { 
             window.localStorage.setItem('token', response.data.payload)
+            window.localStorage.setItem('user', user.username)
            history.push("/friends")
         })
         .catch((error) => { 
