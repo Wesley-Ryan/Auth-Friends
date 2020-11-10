@@ -1,10 +1,13 @@
 import React from 'react';
 
 
-const FriendsCard = () => {
+const FriendsCard = (props) => {
+    const { friend }=props
     return ( 
-        <div>
-            Friends Card
+        <div className='card'>
+            <h3>{friend.name}</h3>
+            <p>{friend.email}</p>
+            <p>{friend.age}</p>
         </div>
      );
 }
